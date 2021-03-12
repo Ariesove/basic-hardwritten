@@ -1,11 +1,9 @@
-function curry() {
-  let args = Array.prototype.slice(arguments, 1)
-  return function () {
-
-  }
+function father() {
 
 }
 
-
-let add = curry(add)
-add(1, 2)(2, 3)(3)
+function son() {
+  this.name = 'scx'
+  this.sex = sex
+}
+console.log(father.prototype);

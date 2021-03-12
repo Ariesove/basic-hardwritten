@@ -20,11 +20,12 @@
 
 function throter(callback, delay) {
   let timer;
+  let args = [...argumets];//
   return function () {
 
     if (!timer) {
       timer = setTimeout(() => {
-        callback.apply(this, arguments)
+        callback.apply(this, args)
       }, delay);
     }
   }

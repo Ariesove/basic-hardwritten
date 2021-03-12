@@ -28,13 +28,14 @@
 ///二次复盘防抖；
 function debance(callback, delay) {
   let timer = null;
+  let args = [...argumets];//为什么
   return function () {
 
     if (timer) {
       clearTimeout(timer)
     } else {
       timer = setTimeout(() => {
-        callback.apply(this, arguments)
+        callback.apply(this, args)
         timer = null
       }, delay);
     }
