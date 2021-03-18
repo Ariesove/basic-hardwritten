@@ -5,7 +5,7 @@ function constructor(name, age) {
 }
 function news() {
   let obj = {}
-  let args = Array.prototype.slice.call(arguments)
+  let args = Array.prototype.slice.call(arguments)//转变为数组，然后取出第一个参数就是构造函数
   let constructor = args.shift()
   obj.__proto__ = constructor.prototype
   constructor.apply(obj, args)
