@@ -1,6 +1,6 @@
 //8;39--8:44 递归实现
 // 梳理思路，首先所谓这个。
-//递归过关
+//递归过关。
 function flatten(arr) {
   let res = [];
   for (let item of arr) {

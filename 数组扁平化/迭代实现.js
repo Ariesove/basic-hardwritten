@@ -23,7 +23,6 @@ function flatten(arr) {
   let res = []
 
   while (stack.length) {
-
     let s = stack.pop()
     if (Array.isArray(s)) {
       stack.push(...s)
@@ -40,3 +39,5 @@ function flatten(arr) {
 
 
 flatten([1, 2, [2, 3]])
+
+//22:14 思路：就是说这个，利用循环模拟递归，用出栈，来模拟函数，出栈的一个过程

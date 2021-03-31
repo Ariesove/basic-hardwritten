@@ -31,3 +31,29 @@ let c = b(3)
 
 add(1, 2, 3)
 add(1)(2)(3)
+//15:00-15:15
+//柯里化//通过
+//思路：首先所谓的柯里化就是将多个参数的函数转变为具有单个参数的函数（并接受原函数的第一个参数），并且去返回
+//就是将函数包装为一个柯里化函数，这样去接受第一个参数并保存，然后多次调用这个函数，最终参数条件符合再最终去调用这个原函数
+//作用就是实现参数复用。
+function add(a, b, c) {
+  return a + b + c
+
+}
+
+let f = curry(add(1, 2, 3))
+f(1)(2)(3)
+
+function curry(func, ...args) {
+
+
+  return function () {
+    args = [...args, ...arguments]
+    if (args.length < func.length) {
+      return curry(func, ...args)//这里用这个。。。参数其实就是 1，2，3 你每次参数传递的时候就是用到这个参数，我一直以为是又解构了忘记了函数传递参数，是直接进行传递的
+    } else {
+      return func.apply(null, args)
+    }
+  }
+
+}
