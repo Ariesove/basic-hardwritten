@@ -3,15 +3,3 @@
   return acc + curvalue
 
 }, initvalue)
-function reduce(fn, initvalue) {
-  let arr = this
-  let len = arguments.length
-  let acc = len === 1 ? arr[i] : initvalue
-  let indexvalue = len === 1 ? 1 : 0
-
-  for (let i = indexvalue; i < arr.length; i++) {
-    acc = fn(acc, arr[i], i, arr)//每一次得结束都是下一次得开始，迭代，不断的累加。
-  }
-  return acc
-
-}

@@ -48,7 +48,7 @@ function curry(func, ...args) {
 
 
   return function () {
-    args = [...args, ...arguments]
+    args = [...args, ...arguments]//这里的摆放位置有关系 ，如果你摆放到外部，就成了curry里的参数了，就不是一个参数
     if (args.length < func.length) {
       return curry(func, ...args)//这里用这个。。。参数其实就是 1，2，3 你每次参数传递的时候就是用到这个参数，我一直以为是又解构了忘记了函数传递参数，是直接进行传递的
     } else {
@@ -57,3 +57,30 @@ function curry(func, ...args) {
   }
 
 }
+
+
+
+get(a)(b)
+function add(a, b, c) {
+  return a + b + c
+}
+function curry(callback) {
+
+  return function () {
+    let args = [...args, ...arguments]//剩余运算符号可以将类数组转化为数组，es6妙，而且还可以去合并数组
+    if (callback.length > args.length) {
+      curry(callback, ...args)
+    } else {
+      callback.apply(null, args)
+    }
+
+
+
+  }
+
+}
+
+let f = curry(add(1)(2)(3))
+f(1)(2)(3)
+add(1)(2)(3)
+curry(a)(b)
