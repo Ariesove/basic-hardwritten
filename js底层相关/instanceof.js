@@ -1,8 +1,6 @@
 
 
 instanceofs(true, Object)
-
-
 function instanceofs(left, right) {
   let leftproto = left.__proto__
   let rightproto = right.prototype
